@@ -61,6 +61,15 @@ body {
 	color:#FFF;
 	border-bottom:2px white dotted;
 }
+.skilltext{
+	font-family: 'Indie Flower', cursive;
+	width:60%;
+	margin:0 auto;
+	padding:10px 10px;
+	text-align:left;
+	color:#FFF;
+	font-size:24px;
+}
 
 .topbox h1{	
 	padding:0 0 40px 0;

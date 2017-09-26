@@ -56,6 +56,15 @@ body {
 	color:#FFF;
 	font-size:24px;
 }
+.skilltext{
+	font-family: 'Indie Flower', cursive;
+	width:60%;
+	margin:0 auto;
+	padding:10px 10px;
+	text-align:left;
+	color:#FFF;
+	font-size:24px;
+}
 .edutext a{
 	text-decoration:none;
 	color:#FFF;
