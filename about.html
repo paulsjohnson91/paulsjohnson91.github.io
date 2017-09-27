@@ -30,6 +30,9 @@
 			}
 		  });
 		});
+        $(document).ready(function() {
+            $('#footer').load("Reusable/footer.html");
+        });
 		</script>		
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 	</head>
@@ -47,44 +50,44 @@
 		</label>
 		<nav class="navigation">
 			<ul>
-				<li>
-					<a href="index.html">
-					<ul>
-					<li><i class="fa fa-home"></i></li>    
-					<li><span>home</span></li>
-					</ul>
-					</a>
-				</li>	
 				<li class="active">
+					<a href="index.html">
+						<ul>
+							<li><i class="fa fa-home"></i></li>
+							<li><span class="currentpage">Home</span></li>
+						</ul>
+					</a>
+				</li>
+				<li class="active currentpage">
 					<a href="">
-					<ul>
-					<li><i class="fa fa-user"></i></li>
-					<li><span>about</span></li>
-					</ul>
+						<ul>
+							<li><i class="fa fa-user"></i></li>
+							<li><span>About</span></li>
+						</ul>
 					</a>
 				</li>
-				<li>
+				<li class="active">
 					<a href="portfolio.html">
-					<ul>
-						<li><i class="fa fa-camera"></i></li>
-						<li><span>portfolio</span></li>
-					</ul>
+						<ul>
+							<li><i class="fa fa-briefcase"></i></li>
+							<li><span>Portfolio</span></li>
+						</ul>
 					</a>
 				</li>
-				<li>
+				<li class="active">
 					<a href="blog.html">
-					<ul>
-						<li><i class="fa fa-bookmark"></i></li>
-						<li><span>Skills</span></li>
-					</ul>
+						<ul>
+							<li><i class="fa fa-laptop"></i></li>
+							<li><span>Skills</span></li>
+						</ul>
 					</a>
 				</li>
-				<li>
+				<li class="active">
 					<a href="#popupContact" class="popupContact_open">
-					<ul>
-						<li><i class="fa fa-send"></i></li>
-						<li><span>contact</span></li>
-					</ul>
+						<ul>
+							<li><i class="fa fa-send"></i></li>
+							<li><span>Contact</span></li>
+						</ul>
 					</a>
 				</li>
 			</ul>
@@ -94,7 +97,7 @@
 	<article class="topbox">
 		<div id="topbar"></div>
 		<h1>About Me</h1>
-		<img class="picofme" src="images/me.png" alt="picture of me"></img>
+		<img class="picofme" src="images/me2.jpg" alt="picture of me"></img>
 		
 		<div class="desc">
 			Hi, I'm Paul Johnson. I'm a Software Engineer and have a passion for all things technology! I graduated from Bath University with a 2.1 in Computer Science and Mathematics in June 2014, which included a years placement at GlaxoSmithKline as an SAP consultant. Since then I've worked as a test lead and a test automation engineer on a wide range of technology including mobile, web and embedded software.
@@ -135,7 +138,7 @@
 	</article>
 	
 	<article class="articlehead xamarin">
-		<h2>Test Automation</h2>
+		<h2>Test Automation Experience</h2>
 		<div class="edutext">
 			<p><b>Mobile Test Automation</b></p>
 			<p>
@@ -166,24 +169,7 @@
 		</div>
 	</article>
 
-	<section>
-	<footer class="wFooter">
-	<section class="footerContent">
-		<ul class="contactIcons">
-			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
-		</ul>
-		<div class="shortInfo">
-			<br/>
-			&copy; 2015 Paul Johnson<br/>
-			Run with <a href="https://www.github.com">Github</a><br>
-			CV available on request
-		</div>
-	</section>
-	</footer>
-	</section>
+		<div id="footer"></div>
 	
 
 		<!--contact me popup-->

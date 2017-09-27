@@ -14,6 +14,11 @@
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="js/jquery.popupoverlay.js"></script>
+		<script type="text/javascript">
+            $(document).ready(function() {
+                $('#footer').load("Reusable/footer.html");
+            });
+		</script>
 	</head>
 	<body>
 	<script type="text/javascript">
@@ -57,7 +62,7 @@
 	<article class="topbox">
 		<div id="topbar"></div>
 		<h1>About Me</h1>
-		<img class="picofme" src="images/me.png" alt="picture of me"></img>
+		<img class="picofme" src="images/me2.jpg" alt="picture of me"></img>
 		
 		<div class="desc">
 			Hi, I'm Paul Johnson. I'm a Software Engineer and have a passion for all things technology! I graduated from Bath University with a 2.1 in Computer Science and Mathematics in June 2014, which included a years placement at GlaxoSmithKline as an SAP consultant. Since then I've worked as a test lead and a test automation engineer on a wide range of technology including mobile, web and embedded software.
@@ -97,7 +102,7 @@
 	</article>
 	
 	<article class="articlehead xamarin">
-		<h2>Test Automation</h2>
+		<h2>Test Automation Experience</h2>
 		<div class="edutext">
 			<p><b>Mobile Test Automation</b></p>
 			<p>
@@ -189,26 +194,10 @@
 				transform: scale(1);
 	}
 	</style>
-	
-	
-	
-	
-		<section>
-	<footer class="wFooter">
-	<section class="footerContent">
-		<ul class="contactIcons">
-			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
-		</ul>
 
-			&copy; 2015 Paul Johnson<br/>
-			Run with <a href="https://www.github.com">Github</a><br>
-			CV available on request
 
-	</section>
-	</footer>
-	</section>
+
+
+	<div id="footer"></div>
 	</body>
 </html>

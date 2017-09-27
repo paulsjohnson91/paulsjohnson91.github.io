@@ -41,6 +41,11 @@
 		  });
 		});
 		</script>
+		<script type="text/javascript">
+            $(document).ready(function() {
+                $('#footer').load("Reusable/footer.html");
+            });
+		</script>
 
 		
 		
@@ -187,7 +192,7 @@
 	</br></br></br></br>
 	<img width="90%" src="images/parrotinUseScreen.png"></img>
 	<p class="desc">
-		In 2014, as part of my dissertation, I built a hands free control mechanism for the cheap and open source Parrot Drone 2.0.
+		In 2014, as part of my dissertation, I built a hands free control mechanism for the open source Parrot Drone 2.0.
 		The application uses an inexpensive infra-red/RGB camera similar to the XBox Kinect to allow the user to pilot the drone as if they are 
 		flying a plane, without a steering.
 	</p>
@@ -523,24 +528,7 @@ $(document).ready(function () {
 	
 	
 	</article>
-	<section>
-	<footer class="wFooter">
-	<section class="footerContent">
-		<ul class="contactIcons">
-			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
-		</ul>
-		<div class="shortInfo">
-			<br/>
-			&copy; 2015 Paul Johnson<br/>
-			Run with <a href="https://www.github.com">Github</a><br>
-			CV available on request
-		</div>
-	</section>
-	</footer>
-	</section>	
+		<div id="footer"></div>
 	
 	</body>
 

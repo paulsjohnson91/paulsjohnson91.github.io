@@ -48,7 +48,7 @@ body {
 .site{padding:40px 0px 80px 0px; background:#426320;}
 .xamarin{padding:40px 0px 80px 0px; background:#BF254D;}
 .edutext{
-	font-family: 'Indie Flower', cursive;
+	font-family: 'DejaVu Serif';
 	width:60%;
 	margin:0 auto;
 	padding:10px 10px;
@@ -57,7 +57,7 @@ body {
 	font-size:24px;
 }
 .skilltext{
-	font-family: 'Indie Flower', cursive;
+	font-family: 'DejaVu Serif';
 	width:60%;
 	margin:0 auto;
 	padding:10px 10px;
@@ -153,9 +153,9 @@ transform: rotate(90deg);
 }
 
 .menu nav ul li a span {
-	font-family: 'Indie Flower', cursive;
+	font-family: 'DejaVu Serif';
 	font-size: 22px;
-	text-transform: uppercase;
+	#text-transform: uppercase;
 	width: 0;
 	color: #fff;
 	text-decoration: none;
@@ -173,6 +173,7 @@ transform: rotate(90deg);
 .menu nav ul li.active a span {
 	width: 100px;
 	padding: 0 10px;
+
 }
 
 
@@ -218,16 +219,14 @@ transform: rotate(90deg);
 
 	
 }
-.menu.blue nav ul li a span:hover { 
+.menu.blue nav ul li a span:hover {
 	color: rgba(255,255,255, 1.0);
-	/*color: white;*/ 
+	/*color: white;*/
 	opacity:1.0;
 	}
-.menu.blue nav ul li a:hover{
-	background: rgba(0,0,0, 1.0);
-	opacity:1.0;
-	color: rgba(255,255,255, 1.0);
-}
+
+
+
 
 .menu.blue nav ul li a ul li i:hover {
 	/*background-color: #3498db; bg*/
@@ -235,6 +234,11 @@ transform: rotate(90deg);
 	/*color: #2980b9; icons;*/
 	color: rgba(255,255,255, 1.0);
 
+}
+.menu nav ul li.currentpage a span {
+	color: rgba(255,255,255, 1.0);
+	/*color: white;*/
+	opacity:1.0;
 }
 
 .cornericon{
@@ -248,7 +252,7 @@ transform: rotate(90deg);
 
 
 .desc{
-	font-family: 'Indie Flower', cursive;
+	font-family: 'DejaVu Serif';
 	width:40%;
 	margin:0 auto;
 	padding:40px 30px;
@@ -271,7 +275,7 @@ transform: rotate(90deg);
 }
 
 .desclesspad{
-	font-family: 'Indie Flower', cursive;
+	font-family: 'DejaVu Serif';
 	width:40%;
 	margin:0 auto;
 	padding:40px 30px 0px 30px;
@@ -284,7 +288,7 @@ transform: rotate(90deg);
 
 .articlehead h2{
 	padding:80px 0 40px 0;
-	font-family: 'Indie Flower', cursive; font-weight:normal;
+	font-family: 'DejaVu Serif'; font-weight:normal;
 	color:#fff;
 	margin:0 0 15px 0;
 	font-size:40px;
@@ -296,7 +300,7 @@ transform: rotate(90deg);
 
 article h2{
 	padding:80px 0 40px 0;
-	font-family: 'Indie Flower', cursive; font-weight:normal;
+	font-family: 'DejaVu Serif'; font-weight:normal;
 	color:#fff;
 	margin:0 0 15px 0;
 	font-size:40px;
