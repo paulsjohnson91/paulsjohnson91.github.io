@@ -151,22 +151,19 @@
 
                     var lastPrice = toInteger(lblprice.data("last"));
 
-                    var dirUp = panel.find(".dir-up");
-                    var dirDown = panel.find(".dir-down");
-
-                    if (lastPrice > price) {
-
-                        panel.addClass("price-down");
-                        panel.removeClass("price-up");
-                        dirUp.hide();
-                        dirDown.show();
-                    } else if (lastPrice < price) {
-                        panel.addClass("price-up");
-                        panel.removeClass("price-down");
-                        dirDown.hide();
-                        dirUp.show();
-                    }
-
+                    // if (lastPrice > price) {
+                    //
+                    //     panel.addClass("price-down");
+                    //     panel.removeClass("price-up");
+                    //     dirUp.hide();
+                    //     dirDown.show();
+                    // } else if (lastPrice < price) {
+                    //     panel.addClass("price-up");
+                    //     panel.removeClass("price-down");
+                    //     dirDown.hide();
+                    //     dirUp.show();
+                    // }
+                    getIncrease(coin,currency,panel)
                     lblprice.data("last", price);
                     if(currency == 'EUR'){
                       lblprice.text("€ " + numberWithCommas(price));
@@ -179,8 +176,82 @@
                     }
                 };
             };
+
             currentPrice.send();
+
+
         }
+        function getIncrease(coin,currency,panel){
+          var currentTrend = new XMLHttpRequest();
+          var decrease;
+          currentTrend.open('GET', 'https://api.gdax.com/products/' + coin + '-' + currency + '/stats', true);
+          currentTrend.onreadystatechange = function () {
+              if (currentTrend.readyState == 4) {
+                  var ticker = JSON.parse(currentTrend.responseText);
+                  var openprice = ticker.open;
+                  var currentprice = ticker.last;
+                  decrease = 0 - (100-((currentprice/openprice)*100))
+                  var dirUp = panel.find(".dir-up");
+                  var dirDown = panel.find(".dir-down");
+                  var dif = panel.find(".increase");
+                  if (decrease<0) {
+
+                      panel.addClass("price-down");
+                      panel.removeClass("price-up");
+                      dirUp.hide();
+                      dirDown.show();
+                  } else if (lastPrice < price) {
+                      panel.addClass("price-up");
+                      panel.removeClass("price-down");
+                      dirDown.hide();
+                      dirUp.show();
+                  }
+
+                  decreaseSmaller = toInteger(decrease*100)/100
+                  //alert(coin + ' ' + decreaseSmaller)
+                  dif.text(decreaseSmaller + '%')
+
+              };
+          };
+          currentTrend.send();
+        }
+
+        function getIncreaseinBTC(coin,currency,panel){
+          var currentTrend = new XMLHttpRequest();
+          var decrease;
+          currentTrend.open('GET', 'https://api.gdax.com/products/' + coin + '-' + currency + '/stats', true);
+          currentTrend.onreadystatechange = function () {
+              if (currentTrend.readyState == 4) {
+                  var ticker = JSON.parse(currentTrend.responseText);
+                  var openprice = ticker.open;
+                  var currentprice = ticker.last;
+                  decrease = 0 - (100-((currentprice/openprice)*100))
+                  var dirUp = panel.find(".dir-up");
+                  var dirDown = panel.find(".dir-down");
+                  var dif = panel.find(".increaseinbtc");
+                  if (decrease<0) {
+
+                      panel.addClass("price-down");
+                      panel.removeClass("price-up");
+                      dirUp.hide();
+                      dirDown.show();
+                  } else if (lastPrice < price) {
+                      panel.addClass("price-up");
+                      panel.removeClass("price-down");
+                      dirDown.hide();
+                      dirUp.show();
+                  }
+
+                  decreaseSmaller = toInteger(decrease*100)/100
+                  //alert(coin + ' ' + decreaseSmaller)
+                  dif.text(decreaseSmaller + '%')
+
+              };
+          };
+          currentTrend.send();
+        }
+
+
         function getPriceInBTC(currency) {
             var currentPrice = new XMLHttpRequest();
 
@@ -202,22 +273,23 @@
 
                     var lastPrice = toInteger(lblprice.data("last"));
 
-                    var dirUp = panel.find(".dir-up");
-                    var dirDown = panel.find(".dir-down");
+                    // var dirUp = panel.find(".dir-up");
+                    // var dirDown = panel.find(".dir-down");
+                    //
+                    // if (lastPrice > price) {
+                    //
+                    //     panel.addClass("price-down");
+                    //     panel.removeClass("price-up");
+                    //     dirUp.hide();
+                    //     dirDown.show();
+                    // } else if (lastPrice < price) {
+                    //     panel.addClass("price-up");
+                    //     panel.removeClass("price-down");
+                    //     dirDown.hide();
+                    //     dirUp.show();
+                    // }
 
-                    if (lastPrice > price) {
-
-                        panel.addClass("price-down");
-                        panel.removeClass("price-up");
-                        dirUp.hide();
-                        dirDown.show();
-                    } else if (lastPrice < price) {
-                        panel.addClass("price-up");
-                        panel.removeClass("price-down");
-                        dirDown.hide();
-                        dirUp.show();
-                    }
-
+                    getIncreaseinBTC(currency,'BTC',panel)
                     lblprice.data("last", price);
                     lblprice.text(price);
                 };
@@ -250,6 +322,7 @@
                 </td>
                 <td>
                     <div class="box">
+                      <span class="increase" data-last="0">----%</span>
                         <span class="price" data-last="0">£ -----</span>
                     </div>
                 </td>
@@ -267,6 +340,7 @@
                 </td>
                 <td>
                     <div class="box">
+                        <span class="increase" data-last="0">----%</span>
                         <span class="price" data-last="0">£ -----</span>
                     </div>
                 </td>
@@ -280,6 +354,7 @@
                 </td>
                 <td>
                     <div class="box">
+                      <span class="increaseinbtc" data-last="0">----%</span>
                         <span class="priceinbtc" data-last="0">£ -----</span>
                     </div>
                 </td>
