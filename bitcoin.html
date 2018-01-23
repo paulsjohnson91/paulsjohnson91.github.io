@@ -96,8 +96,12 @@
             background-color: #cc0000;
         }
 
-        .dir-up,
-        .dir-down {
+        .dir-up-currency,
+        .dir-down-currency {
+            display: none;
+        }
+        .dir-up-btc,
+        .dir-down-btc {
             display: none;
         }
         #ethLogo {
@@ -192,8 +196,8 @@
                   var openprice = ticker.open;
                   var currentprice = ticker.last;
                   decrease = 0 - (100-((currentprice/openprice)*100))
-                  var dirUp = tablepanel.find(".dir-up");
-                  var dirDown = tablepanel.find(".dir-down");
+                  var dirUp = tablepanel.find(".dir-up-currency");
+                  var dirDown = tablepanel.find(".dir-down-currency");
                   var dif = panel.find(".increase");
                   if (decrease<0) {
 
@@ -227,8 +231,9 @@
                   var openprice = ticker.open;
                   var currentprice = ticker.last;
                   decrease = 0 - (100-((currentprice/openprice)*100))
-                  var dirUp = tablepanel.find(".dir-up");
-                  var dirDown = tablepanel.find(".dir-down");
+                  var dirUp = tablepanel.find(".
+                                              -btc");
+                  var dirDown = tablepanel.find(".dir-down-btc");
                   var dif = panel.find(".increaseinbtc");
                   if (decrease<0) {
 
@@ -318,8 +323,8 @@
             <tr>
                 <td><i class="fa fa-bitcoin"></i></td>
                 <td>
-                    <i class="fa fa-caret-up dir-up"></i>
-                    <i class="fa fa-caret-down dir-down"></i>
+                    <i class="fa fa-caret-up dir-up-currency"></i>
+                    <i class="fa fa-caret-down dir-down-currency"></i>
                 </td>
                 <td>
                     <div class="box">
@@ -336,8 +341,8 @@
                 <td>
                   <img src="ltc800.png" height="140px" width="140px">
                 <td>
-                    <i class="fa fa-caret-up dir-up"></i>
-                    <i class="fa fa-caret-down dir-down"></i>
+                    <i class="fa fa-caret-up dir-up-currency"></i>
+                    <i class="fa fa-caret-down dir-down-currency"></i>
                 </td>
                 <td>
                     <div class="box">
@@ -350,8 +355,8 @@
                 <td>
                   <img src="ltc800.png" height="140px" width="140px">
                 <td>
-                    <i class="fa fa-caret-up dir-up"></i>
-                    <i class="fa fa-caret-down dir-down"></i>
+                    <i class="fa fa-caret-up dir-up-btc"></i>
+                    <i class="fa fa-caret-down dir-down-btc"></i>
                 </td>
                 <td>
                     <div class="box">
