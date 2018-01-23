@@ -163,7 +163,8 @@
                     //     dirDown.hide();
                     //     dirUp.show();
                     // }
-                    getIncrease(coin,currency,panel)
+                    var tablepanel = $("." + currency.toLowerCase() + "-panel-currency");
+                    getIncrease(coin,currency,panel,tablepanel)
                     lblprice.data("last", price);
                     if(currency == 'EUR'){
                       lblprice.text("€ " + numberWithCommas(price));
@@ -181,7 +182,7 @@
 
 
         }
-        function getIncrease(coin,currency,panel){
+        function getIncrease(coin,currency,panel,tablepanel){
           var currentTrend = new XMLHttpRequest();
           var decrease;
           currentTrend.open('GET', 'https://api.gdax.com/products/' + coin + '-' + currency + '/stats', true);
@@ -191,18 +192,18 @@
                   var openprice = ticker.open;
                   var currentprice = ticker.last;
                   decrease = 0 - (100-((currentprice/openprice)*100))
-                  var dirUp = panel.find(".dir-up");
-                  var dirDown = panel.find(".dir-down");
+                  var dirUp = tablepanel.find(".dir-up");
+                  var dirDown = tablepanel.find(".dir-down");
                   var dif = panel.find(".increase");
                   if (decrease<0) {
 
-                      panel.addClass("price-down");
-                      panel.removeClass("price-up");
+                      tablepanel.addClass("price-down");
+                      tablepanel.removeClass("price-up");
                       dirUp.hide();
                       dirDown.show();
                   } else {
-                      panel.addClass("price-up");
-                      panel.removeClass("price-down");
+                      tablepanel.addClass("price-up");
+                      tablepanel.removeClass("price-down");
                       dirDown.hide();
                       dirUp.show();
                   }
