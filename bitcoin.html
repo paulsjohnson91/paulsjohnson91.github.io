@@ -216,7 +216,7 @@
           currentTrend.send();
         }
 
-        function getIncreaseinBTC(coin,currency,panel){
+        function getIncreaseinBTC(coin,currency,panel,tablepanel){
           var currentTrend = new XMLHttpRequest();
           var decrease;
           currentTrend.open('GET', 'https://api.gdax.com/products/' + coin + '-' + currency + '/stats', true);
@@ -226,17 +226,17 @@
                   var openprice = ticker.open;
                   var currentprice = ticker.last;
                   decrease = 0 - (100-((currentprice/openprice)*100))
-                  var dirUp = panel.find(".dir-up");
-                  var dirDown = panel.find(".dir-down");
+                  var dirUp = tablepanel.find(".dir-up");
+                  var dirDown = tablepanel.find(".dir-down");
                   var dif = panel.find(".increaseinbtc");
                   if (decrease<0) {
 
-                      panel.addClass("price-down");
-                      panel.removeClass("price-up");
+                      tablepanel.addClass("price-down");
+                      tablepanel.removeClass("price-up");
                       dirUp.hide();
                       dirDown.show();
                   } else{
-                      panel.addClass("price-up");
+                      tabletablepanel.addClass("price-up");
                       panel.removeClass("price-down");
                       dirDown.hide();
                       dirUp.show();
@@ -288,8 +288,8 @@
                     //     dirDown.hide();
                     //     dirUp.show();
                     // }
-
-                    getIncreaseinBTC(currency,'BTC',panel)
+                    var tablepanel = $("." + currency.toLowerCase() + "-panel-btc");
+                    getIncreaseinBTC(currency,'BTC',panel,tablepanel)
                     lblprice.data("last", price);
                     lblprice.text(price);
                 };
@@ -331,7 +331,7 @@
     </div>
     <div class="ltc-panel panel">
         <table class="tbl-ticker">
-            <tr>
+            <tr class="ltc-panel-currency">
                 <td>
                   <img src="ltc800.png" height="140px" width="140px">
                 <td>
@@ -345,7 +345,7 @@
                     </div>
                 </td>
             </tr>
-            <tr>
+            <tr class="ltc-panel-btc">
                 <td>
                   <img src="ltc800.png" height="140px" width="140px">
                 <td>
