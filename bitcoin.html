@@ -167,8 +167,9 @@
                     //     dirDown.hide();
                     //     dirUp.show();
                     // }
-                    var tablepanel = $("." + currency.toLowerCase() + "-panel-currency");
+					var tablepanel = $("." + coin.toLowerCase() + "-panel-currency");
                     getIncrease(coin,currency,panel,tablepanel)
+
                     lblprice.data("last", price);
                     if(currency == 'EUR'){
                       lblprice.text("€ " + numberWithCommas(price));
@@ -200,7 +201,6 @@
                   var dirDown = tablepanel.find(".dir-down-currency");
                   var dif = panel.find(".increase");
                   if (decrease<0) {
-
                       tablepanel.addClass("price-down");
                       tablepanel.removeClass("price-up");
                       dirUp.hide();
@@ -235,13 +235,12 @@
                   var dirDown = tablepanel.find(".dir-down-btc");
                   var dif = panel.find(".increaseinbtc");
                   if (decrease<0) {
-
                       tablepanel.addClass("price-down");
                       tablepanel.removeClass("price-up");
                       dirUp.hide();
                       dirDown.show();
                   } else{
-                      tabletablepanel.addClass("price-up");
+                      tablepanel.addClass("price-up");
                       panel.removeClass("price-down");
                       dirDown.hide();
                       dirUp.show();
@@ -319,7 +318,7 @@
 
     <div class="btc-panel panel">
         <table class="tbl-ticker">
-            <tr>
+            <tr class="btc-panel-currency">
                 <td><i class="fa fa-bitcoin"></i></td>
                 <td>
                     <i class="fa fa-caret-up dir-up-currency"></i>
